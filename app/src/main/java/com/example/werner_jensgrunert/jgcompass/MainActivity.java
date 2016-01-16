@@ -1,6 +1,8 @@
 package com.example.werner_jensgrunert.jgcompass;
 
-// http://android-developers.blogspot.co.uk/2011/06/deep-dive-into-location.html?_sm_au_=iZs5H77Q165fvwrq
+// http://android-developers.blogspot.co.uk/2011/06/deep-dive-into-location.html
+// http://www.onlineconversion.com/map_greatcircle_bearings.htm
+// http://stackoverflow.com/questions/3856340/what-scale-is-initial-bearing-in-returned-from-location-distancebetween
 
 import android.Manifest;
 import android.content.Intent;
@@ -16,6 +18,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView LatitudeGPS;
     private TextView LongitudeGPS;
     private TextView SpeedGPS;
+    private TextView LatitudeDEST;
+    private TextView LongitudeDEST;
+
     private LocationManager locationManager;
     private LocationListener locationListener;
     private String provider;
@@ -68,12 +74,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Status = (TextView) findViewById(R.id.textViewStatus);
         LatitudeGPS = (TextView) findViewById(R.id.textViewLatGps);
         LongitudeGPS = (TextView) findViewById(R.id.textViewLongGps);
         SpeedGPS = (TextView) findViewById(R.id.textViewSpeedGps);
+        LatitudeDEST = (TextView) findViewById(R.id.textViewLatDEST);
+        LongitudeDEST = (TextView) findViewById(R.id.textViewLongDEST);
+
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        String type = intent.getType();
+        String data = intent.getDataString();
+
+        LatitudeDEST.setText(""+action);
+        LongitudeDEST.setText(""+type+" "+data);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 

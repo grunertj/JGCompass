@@ -62,20 +62,22 @@
         android:text="Current Speed [km/h]"
         android:textSize="18dp"
         android:id="@+id/tv3"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="32dp"
         android:layout_below="@+id/textViewLatGps"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Speed"
         android:textStyle="bold"
-        android:textSize="96dp"
+        android:textSize="64dp"
         android:gravity="center"
         android:id="@+id/textViewSpeedGps"
         android:layout_below="@+id/tv3"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -83,15 +85,45 @@
         android:text="List Packages"
         android:id="@+id/button"
         android:onClick="listPackages"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/textViewSpeedGps"
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Installed packages"
         android:id="@+id/textViewPackages"
         android:scrollbars="vertical"
+        android:layout_below="@+id/textViewLatDEST"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination Latitude"
+        android:textSize="18dp"
+        android:id="@+id/textViewLatDEST"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination Longitue"
+        android:textSize="18dp"
+        android:id="@+id/textViewLongDEST"
+        android:layout_alignTop="@+id/textViewLatDEST"
+        android:layout_alignRight="@+id/textViewLongGps"
+        android:layout_alignEnd="@+id/textViewLongGps" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination Latitude"
+        android:textSize="18dp"
+        android:id="@+id/textView3"
         android:layout_below="@+id/button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -99,37 +131,91 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView"
-        android:layout_below="@+id/textViewSpeedGps"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="Destination Longitue"
+        android:textSize="18dp"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/button"
+        android:layout_alignRight="@+id/textViewLongDEST"
+        android:layout_alignEnd="@+id/textViewLongDEST" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:textSize="14dp"
+        android:text="Distance :"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/tv3"
+        android:layout_alignLeft="@+id/tv2"
+        android:layout_alignStart="@+id/tv2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:text="Bearing 1:"
         android:id="@+id/textView2"
+        android:layout_above="@+id/textView5"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:text="Bearing 2:"
+        android:id="@+id/textView5"
+        android:layout_alignTop="@+id/textViewB2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bearing 3:"
+        android:textSize="14dp"
+        android:id="@+id/textView6"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Distance"
+        android:id="@+id/textViewDIST"
         android:layout_alignTop="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Bearing 1"
+        android:id="@+id/textViewB1"
+        android:layout_below="@+id/textViewDIST"
         android:layout_alignRight="@+id/textViewLongGps"
         android:layout_alignEnd="@+id/textViewLongGps" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textSize="18dp"
+        android:text="Bearing 2"
+        android:id="@+id/textViewB2"
+        android:layout_below="@+id/textViewB1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView4"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:textSize="18dp"
+        android:text="Bearing 3"
+        android:id="@+id/textViewB3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textViewB2" />
 
 </RelativeLayout>
